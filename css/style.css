@@ -1,0 +1,510 @@
+/*   
+Name: video2brain Trainings Layout
+URI: ToDo: insert Project-URI here
+Description: ToDo: insert Project-Description here
+Version: ToDo: insert Project-Version here
+Author: video2brain GmbH
+Author URI: http://www.video2brain.de/
+
+Kudos: Kudos: Eric Meyers (Reset), ToDo: add more Kudos here
+
+License:
+Creative Commons â€“ Namensnennung 3.0 Ã–sterreich
+http://creativecommons.org/licenses/by/3.0/at/
+*/
+
+/* Reset */
+html, body, div, span, object,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+
+/* @group Global */
+body {
+	background: #ebebeb;
+	color: #1e1e1e;
+	font: normal 14px/1.3 Helvetica, Arial, sans-serif;
+}
+.container {
+	margin: 0 auto;
+	width: 940px;
+}
+#head .container, #feature .container, #footer .container {
+	color: #fff;
+}
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+.column-1 {
+	width: 270px;
+	margin-right: 65px;
+	float: left;
+}
+.column-2 {
+	width: 605px;
+	margin-right: 65px;
+	float: left;
+}
+/* entfernt "margin-right" vom letzten Element in eine Reihe */
+.column-1 + .column-1 + .column-1, #footer .column-1 h2 + a + a + a + a + a, #copyright .right a + a {
+	margin-right: 0;
+}
+/* @end */
+
+/* @group Links */
+a:link, a:visited {
+	color: #afc800;
+	text-decoration: none;
+}
+a:hover, a:active {
+	color: #afc800;
+	text-decoration: underline;
+}
+/* @end */
+
+/* @group Headlines */
+h1 {
+	font: bold 52px/1.3 "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #fff;
+	text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+}
+h2 {
+	font: bold 22px/1.3 "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #1e1e1e;
+	text-shadow: 1px 1px 0px #fff;
+	margin: 0 0 6px 0;
+}
+#footer h2 {
+	font: bold 22px/1.3 "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #fff;
+	text-shadow: none;
+	margin: 0 0 6px 0;
+}
+h3 {
+	font: bold 32px/1.3 "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #fff;
+	text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+}
+/* @end */
+
+/* @group Head */
+#head {
+	height: 87px;
+	background: #141414 url(images/head-gradient.png) bottom left repeat-x;
+}
+#highlight {
+	position: relative;
+	left: -161px;
+	width: 940px;
+	height: 512px;
+	background: url(images/feature-highlight.png) 0 0 no-repeat;
+	margin: 0 auto;
+}
+#head .container {
+	position: relative;
+	left: 161px;
+}
+#navi {
+	height: 87px;
+	width: 360px;
+	float: right;
+	list-style: none;
+}
+#hlogo {
+	display: block;
+	width: 219px;
+	height: 36px;
+	background: url(images/sprite.png) -476px -136px no-repeat;
+	float:  left;
+	margin: 18px 0 0 0;
+	text-indent: -9999px;
+}
+#navi li {
+	float:  left;
+}
+#navi a {
+	display: block;
+	width: 90px;
+	height: 87px;
+	font: bold 26px/87px "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-align: center;
+}
+#navi a:link, #navi a:visited {
+	color: #fff;
+	text-decoration: none;
+}
+#navi a:hover, #navi a:active, #navi .active {
+	color: #fff;
+	text-decoration: none;
+	background: url(images/sprite.png) -696px -453px no-repeat;
+}
+/* @end */
+
+/* @group Feature */
+#feature {
+	height: 425px;
+	background: #1e1e1e;
+}
+#feature .container {
+	position: relative;
+}
+#feature .left {
+	margin: 38px 0 0 0;
+}
+#feature .right {
+	width: 475px;
+	margin: 40px 0 0 0;
+}
+#feature p {
+	color: #fff;
+	font: 16px/1.3 "Helvetica Neue", Helvetica, Arial, sans-serif;
+	width: 460px;
+	margin: 16px 0 0 2px;
+}
+#btn-reg:link, #btn-reg:visited {
+	display: block;
+	width: 228px;
+	height: 80px;
+	background: url(images/sprite.png) 0 0 no-repeat;
+	float: left;
+	margin: 33px 0 0 1px;
+	text-indent: -9999px;
+}
+#btn-reg:hover, #btn-reg:active {
+	background: url(images/sprite.png) -238px 0 no-repeat;
+}
+#btn-feature:link, #btn-feature:visited {
+	display: block;
+	width: 228px;
+	height: 80px;
+	background: url(images/sprite.png) 0 -90px no-repeat;
+	float: right;
+	margin: 33px 0 0 0;
+	text-indent: -9999px;
+}
+#btn-feature:hover, #btn-feature:active {
+	background: url(images/sprite.png) -238px -90px no-repeat;
+}
+#preisbg {
+	position: relative;
+	min-width: 940px;
+	width: 100%;
+	height: 615px;
+	background: url(images/feature-preise.png) center center no-repeat;
+	margin: 0 auto;
+	z-index: 2;
+}
+#preisbg .column-1 {
+	margin-top: 110px;
+	text-align: center;
+}
+.abotitel {
+	font: bold 45px/72px "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+}
+.abountertitel {
+	display: block;
+	text-transform: uppercase;
+	font: normal 18px/41px "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-shadow: 1px 1px 0px #000, 0px 0px 65px rgba(255,255,255,0.4);
+}
+#preisbg ul {
+	text-align: left;
+	list-style-position: inside;
+	width: 232px;
+	margin: 15px auto 11px auto;
+	color: #1e1e1e;
+	font: normal 14px/1.3 Helvetica, Arial, sans-serif;
+}
+#preisbg ul li {
+	list-style-image: url(images/list-style-yes.png);
+	height: 19px;
+	padding: 10px 0 10px 0;
+	border-bottom: 1px solid #ccc;
+}
+#preisbg ul li + li {
+	border-top: 1px solid #fff;
+}
+#preisbg ul li + li + li + li + li {
+	border-bottom: none;
+}
+#preisbg ul li span {
+	position: relative;
+	top:  -4px;
+}
+#preisbg ul li.no {
+	list-style-image: url(images/list-style-no.png);
+}
+.abopreis {
+	font: bold 24px/50px "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-shadow: 1px 1px 0px #000;
+}
+.abopreis span {
+	font: normal 18px/1.3 "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-shadow: 1px 1px 0px #000;
+}
+/* @end */
+
+/* @group Main */
+#main {
+	background: url(images/main-gradient-top.png) top left repeat-x;
+	border-top: 1px solid #fff;
+	padding: 65px 0 0 0;
+	overflow: hidden;
+}
+#main.preise {
+	background: url(images/main-gradient-top.png) top left repeat-x;
+	border-top: 1px solid #fff;
+	padding: 210px 0 0 0;
+	overflow: hidden;
+	clear: both;
+	position: relative;
+	top: -145px;
+	z-index: 1;
+}
+#main p, #main span {
+	text-shadow: 1px 1px 0 #fff;
+}
+#main div.column-1 {
+	margin-bottom: 59px;
+	height: 125px;
+}
+#main div.column-2 {
+	margin-bottom: 65px;
+	height: 145px;
+}
+#btn-reg-big:link, #btn-reg-big:visited {
+	display: block;
+	width: 607px;
+	height: 126px;
+	background: url(images/sprite.png) 0 -180px no-repeat;
+	float: left;
+	margin: 0 0 65px 0;
+	text-indent: -9999px;
+}
+#btn-reg-big:hover, #btn-reg-big:active {
+	background: url(images/sprite.png) 0 -316px no-repeat;
+}
+
+#sidebar {
+	width: 270px;
+	height: 704px;
+	float: right;
+	background: url(images/sprite.png) -825px 0 no-repeat;
+	margin: 0 0 65px 0;
+	overflow: hidden;
+}
+#sidebar a {
+	display: block;
+	width: 246px;
+	height: 170px;
+	text-decoration: none;
+}
+#sidebar a:link .thumb-lbox, #sidebar a:visited .thumb-lbox {
+	position: relative;
+	top: 10px;
+	left: 10px;
+	display: block;
+	width: 246px;
+	height: 170px;
+	background: url(images/sprite.png) -450px -442px no-repeat;
+	text-indent: -9999px;
+	z-index: 2;
+}
+#sidebar a:hover .thumb-lbox, #sidebar a:active .thumb-lbox {
+	background: url(images/sprite.png) -450px -612px no-repeat;
+}
+#sidebar img {
+	position: relative;
+	top: -170px;
+	width: 204px;
+	height: 128px;
+	margin: 33px 33px 9px 33px;
+	z-index: 1;
+}
+
+#partner {
+	float: left;
+	width: 203px;
+	/*margin: 0 132px 0 0;*/
+}
+#partner a {
+	display: block;
+	margin: 0 0 10px 0;
+	text-indent: -9999px;
+}
+.aatc:link, .aatc:visited {
+	width: 203px;
+	height: 58px;
+	background: url(images/sprite.png) -476px 0 no-repeat;
+}
+.aatc:hover, .aatc:active {
+	background: url(images/sprite.png) -476px -68px no-repeat;
+}
+.awl:link, .awl:visited {
+	width: 203px;
+	height: 34px;
+	background: url(images/sprite.png) -617px -352px no-repeat;
+}
+.awl:hover, .awl:active {
+	background: url(images/sprite.png) -617px -386px no-repeat;
+}
+.mut:link, .mut:visited {
+	width: 127px;
+	height: 58px;
+	background: url(images/sprite.png) -617px -222px no-repeat;
+	float: left;
+}
+.mut:hover, .mut:active {
+	background: url(images/sprite.png) -617px -290px no-repeat;
+}
+.peachpit:link, .peachpit:visited {
+	width: 50px;
+	height: 60px;
+	background: url(images/sprite.png) -754px -222px no-repeat;
+	float: right
+}
+.peachpit:hover, .peachpit:active {
+	background: url(images/sprite.png) -754px -292px no-repeat;
+}
+#main blockquote {
+	float: right;
+	margin: 0 0 20px 0;
+}
+#main blockquote p {
+	color: #888;
+	margin: 0 0 10px 0;
+	font: italic 16px/1.3 Georgia, Times, â€œTimes New Romanâ€�, serif;
+}
+#main blockquote span {
+	color: #aaa;
+	font: bold 16px/1.3 "Helvetica Neue", Helvetica, Arial, sans-serif;
+	float: right;
+}
+/* @end */
+
+/* @group Footer */
+#footer {
+	height: 380px;
+	overflow: hidden;
+	background: #141414 url(images/main-gradient-bottom.png) top left repeat-x;
+}
+#bird {
+	position: relative;
+	left: -299px;
+	width: 440px;
+	height: 323px;
+	background: url(images/sprite.png) 0 -452px no-repeat;
+	margin: 0 auto;
+}
+#footer .container {
+	position: relative;
+	left: 49px;
+	top: 116px;
+}
+.youtube, .facebook, .twitter {
+	display: block;
+	width: 32px;
+	height: 32px;
+	text-indent: -9999px;
+	float: left;
+	margin: 0 10px 23px 0;
+}
+.youtube:link, .youtube:visited {
+	background: url(images/sprite.png) -749px -180px no-repeat;
+}
+.facebook:link, .facebook:visited {
+	background: url(images/sprite.png) -617px -180px no-repeat;
+}
+.twitter:link, .twitter:visited {
+	background: url(images/sprite.png) -683px -180px no-repeat;
+}
+.youtube:hover, .youtube:active {
+	background: url(images/sprite.png) -782px -180px no-repeat;
+}
+.facebook:hover, .facebook:active {
+	background: url(images/sprite.png) -650px -180px no-repeat;
+}
+.twitter:hover, .twitter:active {
+	background: url(images/sprite.png) -716px -180px no-repeat;
+}
+.visa, .mastercard, .maestro, .amex, .paypal {
+	display: block;
+	width: 50px;
+	height: 30px;
+	text-indent: -9999px;
+	float: left;
+	margin: 0 5px 0 0;
+}
+.visa:link, .visa:visited {
+	background: url(images/sprite.png) -714px -124px no-repeat;
+}
+.mastercard:link, .mastercard:visited {
+	background: url(images/sprite.png) -714px -62px no-repeat;
+}
+.maestro:link, .maestro:visited {
+	background: url(images/sprite.png) -714px -31px no-repeat;
+}
+.amex:link, .amex:visited {
+	background: url(images/sprite.png) -714px 0 no-repeat;
+}
+.paypal:link, .paypal:visited {
+	background: url(images/sprite.png) -714px -93px no-repeat;
+}
+.visa:hover, .visa:active {
+	background: url(images/sprite.png) -765px -124px no-repeat;
+}
+.mastercard:hover, .mastercard:active {
+	background: url(images/sprite.png) -765px -62px no-repeat;
+}
+.maestro:hover, .maestro:active {
+	background: url(images/sprite.png) -765px -31px no-repeat;
+}
+.amex:hover, .amex:active {
+	background: url(images/sprite.png) -765px 0 no-repeat;
+}
+.paypal:hover, .paypal:active {
+	background: url(images/sprite.png) -765px -93px no-repeat;
+}
+address {
+	font: normal 14px/1.3 "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#copyright {
+	color: #454545;
+	font: normal 12px/1.3 "Helvetica Neue", Helvetica, Arial, sans-serif;
+	margin: 65px 0 0 0;
+	float: left;
+	width: 100%;
+}
+
+#copyright #flogo {
+	display: block;
+	width: 97px;
+	height: 16px;
+	background: url(images/sprite.png) -617px -420px no-repeat;
+	float:  left;
+	margin: 0 10px 0 0;
+	text-indent: -9999px;
+}
+#copyright span {
+	float: left;
+	margin: 5px 0 0 0;
+}
+#copyright .right a {
+	float: left;
+	margin: 5px 10px 0 0;
+}
+/* @end */

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Edicos Cockpit Prototype</title>
+<!--Load the AJAX API-->
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript" src="js/pagespeed.js"></script>
+<script>
+    	function init() {
+			runPagespeedDesktop();
+			runPagespeedMobile();
+		}
+    </script>
+</head>
+
+<body onload="init()">
+	<h1>PageSpeed cockpit</h1>
+	<h2>Ergebnisse für http://munichre.com</h2>
+
+	<div id="out_err">
+		<p id="error_all">Es sind keine Fehler aufgetreten</p>
+		<p>
+			Desktop-Abfrage: <span id="desktop"></span>
+		</p>
+		<p>
+			Mobile-Abfrage: <span id="mobile"></span>
+		</p>
+		<p>
+			Alle Abfragen: <span id="summary"></span>
+		</p>
+	</div>
+
+	<div id="speedDesktop" class="chart">
+		<p>PageSpeed - Data for your Site</p>
+	</div>
+
+	<table id="pagespeedCockpit" style="border: 1 solid black">
+		<thead>
+			<tr>
+				<th>Empfehlung</th>
+				<th>Desktop</th>
+				<th>Mobil</th>
+				<th>Gesamt</th>
+			</tr>
+		</thead>
+		<tbody id="pagespeedCockpitScore">
+			<tr>
+				<td></td>
+				<td id="pagespeedCockpitScoreDesktop"><div class="score_dummy">loading
+						desktop score...</div></td>
+				<td id="pagespeedCockpitScoreMobile"><div class="score_dummy">loading
+						mobile score...</div></td>
+				<td></td>
+			</tr>
+		</tbody>
+		<tbody id="pagespeedCockpitEmpfehlungen">
+		</tbody>
+		<tbody id="pagespeedCockpitVolumen">
+		</tbody>
+	</table>
+
+	<div id="size"></div>
+
+
+
+</body>
+</html>

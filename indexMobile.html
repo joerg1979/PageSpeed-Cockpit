@@ -1,0 +1,127 @@
+<html>
+<head>
+<!--Load the AJAX API-->
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript" src="js/pagespeedM.js">
+	
+    </script>
+</head>
+
+<body>
+	<h2>Ergebnisse für http://munichre.com</h2>
+	<h4>minimized output</h4>
+
+	<div id="speedMobile" class="chart">
+		<div>
+			<a href="index.html">back to Desktop-Test</a>
+		</div>
+		<p>Data for Mobile version of your site</p>
+		<script> <!-- GoogleT
+			callbacks.displayPageSpeedScore = function(result) {
+			  var score = result.score;
+
+			  // Construct the query to send to the Google Chart Tools.
+			  var query = [
+				'chtt=Page+Speed+score:+' + score,
+				'chs=180x100',
+				'cht=gom',
+				'chd=t:' + score,
+				'chxt=x,y',
+				'chxl=0:|' + score,
+			  ].join('&');
+			  var i = document.createElement('img');
+			  i.src = CHART_API_URL + query;
+			  document.body.insertBefore(i, null);
+			};
+		</script>
+	</div>
+	</div>
+
+	<div>
+		<script> <!-- Top Suggestions in a list
+			callbacks.displayTopPageSpeedSuggestions = function(result) {
+				var results = [];
+				var ruleResults = result.formattedResults.ruleResults;
+				for (var i in ruleResults) {
+					var ruleResult = ruleResults[i];
+					// Don't display lower-impact suggestions.
+					if (ruleResult.ruleImpact >= 0.00) {
+						results.push({
+							name: ruleResult.localizedRuleName, 
+							impact: ruleResult.ruleImpact,
+						});
+					}
+				}
+				results.sort(sortByImpact);
+				var ul = document.createElement('ul');
+				for (var i = 0, len = results.length; i < len; ++i) {
+					var r = document.createElement('li');
+					r.innerHTML = results[i].name + " ("+results[i].impact+")";
+					ul.insertBefore(r, null);
+				}
+				if (ul.hasChildNodes()) {
+					document.body.insertBefore(ul, null);
+				} else {
+					var div = document.createElement('div');
+					div.innerHTML = 'No high impact suggestions. Good job!';
+					document.body.insertBefore(div, null);
+				}
+			};
+			// Helper function that sorts results in order of impact.
+			function sortByImpact(a, b) { return b.impact - a.impact; }
+		</script>
+	</div>
+	<div>
+		<script> <!-- show pie with languages used on ya site
+			var RESOURCE_TYPE_INFO = [
+			  {label: 'JavaScript', field: 'javascriptResponseBytes', color: 'e2192c'},
+			  {label: 'Images', field: 'imageResponseBytes', color: 'f3ed4a'},
+			  {label: 'CSS', field: 'cssResponseBytes', color: 'ff7008'},
+			  {label: 'HTML', field: 'htmlResponseBytes', color: '43c121'},
+			  {label: 'Flash', field: 'flashResponseBytes', color: 'f8ce44'},
+			  {label: 'Text', field: 'textResponseBytes', color: 'ad6bc5'},
+			  {label: 'Other', field: 'otherResponseBytes', color: '1051e8'},
+			];
+	
+			callbacks.displayResourceSizeBreakdown = function(result) {
+			  var stats = result.pageStats;
+			  var labels = [];
+			  var data = [];
+			  var colors = [];
+			  var totalBytes = 0;
+			  var largestSingleCategory = 0;
+			  for (var i = 0, len = RESOURCE_TYPE_INFO.length; i < len; ++i) {
+				var label = RESOURCE_TYPE_INFO[i].label;
+				var field = RESOURCE_TYPE_INFO[i].field;
+				var color = RESOURCE_TYPE_INFO[i].color;
+				if (field in stats) {
+				  var val = Number(stats[field]);
+				  totalBytes += val;
+				  if (val > largestSingleCategory) largestSingleCategory = val;
+				  labels.push(label + ' ('+parseInt(val/1024)+'KiB)');
+				  data.push(val);
+				  colors.push(color);
+				}
+			  }
+			  // Construct the query to send to the Google Chart Tools.
+			  var query = [
+				'chs=600x160',
+				'cht=p3',
+				'chts=' + ['000000', 16].join(','),
+				'chco=' + colors.join('|'),
+				'chd=t:' + data.join(','),
+				'chdl=' + labels.join('|'),
+				'chdls=000000,14',
+				'chp=1.6',
+				'chds=0,' + largestSingleCategory,
+			  ].join('&');
+			  var i = document.createElement('img');
+			  i.src = 'http://chart.apis.google.com/chart?' + query;
+			  document.body.insertBefore(i, null);
+			};
+		</script>
+	</div>
+
+
+</body>
+</html>

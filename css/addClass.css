@@ -1,0 +1,9 @@
+.meineKlasse1 {
+	background: red;
+	font-size: 32px;
+	font-style: italic;
+	color: white;
+	border: inset black;
+	border-width: 2px;
+}
+

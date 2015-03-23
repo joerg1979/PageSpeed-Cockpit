@@ -1,0 +1,55 @@
+.logo_dummy {
+	height: 100px;
+	width: 125px;
+	background-color: #999;
+}
+
+.score_dummy, .size_dummy {
+	height: 100px;
+	width: 200px;
+	background-color: #999;
+}
+
+.uptime_dummy {
+	text-align: center;
+	height: 200px;
+	width: 200px;
+	background-color: #999;
+}
+
+.JavaScript {
+	background-color: #e2192c;
+}
+
+.Images {
+	background-color: #f3ed4a;
+}
+
+.CSS {
+	background-color: #ff7008;
+}
+
+.HTML {
+	background-color: #43c121;
+}
+
+.Flash {
+	background-color: #f8ce44;
+}
+
+.Text {
+	background-color: #ad6bc5;
+}
+
+.Other {
+	background-color: #1051e8;
+}
+
+#pageWrapper {
+	background-color: #FEFEFE;
+}
+
+.headerSeperator{
+	height: 25px;
+	color: black;
+}

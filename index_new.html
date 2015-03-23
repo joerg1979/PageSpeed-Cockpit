@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>PageSpeed - Cockpit</title>
+
+		<link rel="stylesheet"href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"	media="screen">
+		<link rel="stylesheet"href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+		
+		
+		<link rel="stylesheet" href="css/addClass.css" media="screen">
+		<link rel="stylesheet" href="css/pagestatsstyle.css" media="screen">
+		<link rel="stylesheet" href="css/style.css" media="screen">
+		
+		<script src="js/jquery-1.4.1.min.js"></script>
+		<script src="js/addClass.js"></script>
+		
+		
+		
+		<!-- PageSpeed.js and Google-JScript-API -->
+		
+		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+		<script type="text/javascript" src="js/pagespeed.js"></script>
+		
+		<script>
+            function init() {
+                runPagespeedDesktop();
+                runPagespeedMobile();
+
+            }
+		</script>
+
+		<!-- Uptime-Robot.js and Google-JQuery-API 
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+		<script type="text/javascript" src="js/uptimerobot.js"></script>
+		<script type="text/javascript" src="js/jquery.uptimeRobotMonitor.js"></script>showResultError(result)-->
+		
+	</head>
+
+<!--	<body onload="init()">
+	-->
+	<body>	
+		<div class="container" id="pageWrapper">
+			<div class="row" id="headerRow">
+				<div class="col-md-3">
+					<a href="index_new.html" ><div class="logo_dummy"></div></a>
+				</div>
+				<div class="col-md-9" id="headerRight">
+					<h1>PageSpeed Cockpit </h1>
+					<h2>checkout your performance</h2>
+				</div>
+			</div>
+			<div class="row" id="headerSeperatorRow">
+				<div class="container">
+					<div class="col-md-12"><hr id="headerSeperator" /></div>
+				</div>
+			</div>
+			<div class="row" id="pagespeedProgressRow">
+				<div class="col-md-3" id="pagespeedProgressLeft" >
+					<div class="panel panel-default" id="pagespeedUrlPanel">
+						<div class="panel-heading">
+							<h4> PageSpeed <small>getting your score</small></h4>
+						</div>
+						<div class="panel-body">
+							<p id="pagespeedProgressLeftPanelBodyP">Starten Sie die Auswertung durch anklicken der gewünschten Seite, bzw. derer URL</p>
+						</div>
+						<ul class="list-group" id="urlButtonList">
+							<li class="list-group-item">
+								<button id="btn00" class="btn btn-info btn-block">individuelle Adresse</button>
+							</li>
+							<li class="list-group-item">
+								<button id="btn01"class="btn btn-primary btn-block">http://www.munichRe.com</button>
+							</li>
+							<li class="list-group-item bg-warning">
+								<button class="btn btn-primary btn-block" onclick="setTestSite('http://munichRe.com')">
+									http://munichRe.com	</button>
+							</li>
+							<li class="list-group-item">
+								<button class="btn btn-primary btn-block" onclick="setTestSite('http://www.marclife.com')">
+									http://www.marclife.com	</button>
+							</li>
+							<li class="list-group-item bg-warning">
+								<button class="btn btn-alert btn-sm btn-block" onclick="setTestSite('http://marclife.com')">
+									http://marclife.com </button>
+							</li>
+							<li class="list-group-item">
+								<button class="btn btn-info btn-xs btn-block" onclick="setTestSite('http://www.beaufort.com')">
+									http://www.beaufort.com	</button>
+							</li>
+							<li class="list-group-item">
+								<button class="btn btn-danger btn-lg btn-block" onclick="setTestSite('http://beaufort.com')">
+									http://beaufort.com	</button>
+							</li>
+							
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-9" id="pagespeedProgressRight">
+					<div class="panel panel-default" >
+						<div class="panel-heading">
+							<h4> Fortschritsanzeige: <kbd id="ssURL"></kbd></h4>
+						</div>
+						<div class="panel-body">
+							<p class="bg-success" id="pagespeedProgressRightPanelBody"></p>
+						</div>
+						<p id="out_err"></p>
+						<ul class="list-group bg-danger" id="progressList">
+			<!--				<li class="list-group-item">
+								<div class="progress bg-warning">
+									<div id="progD" class="progress-bar progress-bar-success" role="progressbar" style="width: 25%;">
+										Testing Destop-Version of <small id="dvURL"></small>
+									</div>
+								</div>
+							</li>
+							<li class="list-group-item">
+								<div class="progress">
+									<div id="progM" class="progress-bar progress-bar-primary" role="progressbar" style="width: 25%">
+										Testing Mobile-Version of <small id="mvURL"></small>
+									</div>
+								</div>
+							</li>
+-->
+							<li class="list-group-item"> 
+								<div class="progress">
+									<div class="progress-bar progress-bar-success" id="progM"  style="width: 35%">
+										<small id="mvURL"></small>
+										<span class="sr-only">35% Complete (success)</span>
+									</div>
+									<div class="progress-bar progress-bar-info progress-bar-striped active" id="progD"  style="width: 20%">
+										<small id="dvURL"></small>
+										<span class="sr-only">20% Complete (warning)</span>
+									</div>
+								</div>
+							</li>	
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="row" id="pagespeedResetRow">
+				<div class="col-md-3"><p id="pagespeedResetRowP"></p></div>
+				<div class="col-md-9">
+					<button id="pagespeedResetRowButton" class="btn btn-danger btn-lg btn-block">Ergebnisse verwerfen und neuen Test beginnen</button>
+				</div>
+			</div>
+			<div class="row" id="pagespeedProgressSeperatorRow">
+				<div class="col-md-12">
+					<hr class="headerSeperator" />
+				</div>
+			</div>
+			<div class="row" id="pagespeedResultRow">
+				<!-- Ausgabe der PageSpeed-Ergebnisse -->
+				<div class="col-md-12" id="pagespeedCockpitDiv">
+					<table class="table table-bordered table-hover" id="pagespeedCockpit" style="text-align: right;">
+						<thead class="bg-primary">
+							<tr>
+								<th>Empfehlungen</th>
+								<th>Desktop <span id="pagespeedDestopScore" class='badge pull-right'></span></th>
+								<th>Mobile <span id="pagespeedMobileScore" class='badge pull-right'></span></th>
+								<th>Gesamt</th>
+							</tr>
+						</thead>
+						<tbody id="pagespeedCockpitScore">
+							<tr>
+								<td id="showOverallScoreAdvise"></td>
+								<td id="pagespeedCockpitScoreDesktop">
+								<div class="score_dummy">
+									loading desktop score...
+								</div></td>
+								<td id="pagespeedCockpitScoreMobile">
+								<div class="score_dummy">
+									loading mobile score...
+								</div></td>
+								<td id="showOverallScore"> </td>
+							</tr>
+						</tbody>
+						<tbody id="pagespeedCockpitEmpfehlungen">
+							<tr id="aggrR">
+								<td id="aggrD" colspan="4"></td>
+							</tr>
+							<!--
+							Hier die Ausgabe der TopSuggestions
+							-->
+						</tbody>
+						
+						<thead class="bg-primary">
+							<tr>
+								<th>Größenverteilung der Seite</th>
+								<th>Desktop <span id="pagespeedDestopSize" class='badge pull-right'></span></th>
+								<th>Mobile <span id="pagespeedMobileSize" class='badge pull-right'></span></th>
+								<th>Gesamt</th>
+							</tr>
+						</thead>
+						<tbody id="pagespeedCockpitSize">
+							<tr>
+								<td>Verteilung der Inhalte</td>
+								<td id="pagespeedCockpitSizeDesktop">
+								<div class="size_dummy">
+									loading desktop size...
+								</div></td>
+								<td id="pagespeedCockpitSizeMobile">
+								<div class="size_dummy">
+									loading mobile size...
+								</div></td>
+								<td></td>
+							</tr>
+
+						</tbody>
+						
+						<tbody id="pagespeedCockpitSizeDetails">
+
+						</tbody>
+
+					</table>
+
+					<table class="table table-bordered" id="table_uptime">
+						<thead>
+							<tr class="bg-primary">
+								<th colspan="3">Serverfügbarkeit</th>
+							</tr>
+							<tr class="bg-info" style="text-align: center">
+								<th>Server 1</th>
+								<th>Server 2</th>
+								<th>Server 3</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="bg-success">http://www.munichre.com</td>
+								<td class="bg-warning">http://munichre.com</td>
+								<td class="bg-danger">http://www.marclife.com</td>
+							</tr>
+							<tr style="text-align: center">
+								<td id="td_uptime1"></td>
+								<td id="td_uptime2"></td>
+								<td id="td_uptime3"></td>
+							</tr>
+							<tr>
+								<td>durchschnittliche Verfügbarkeit</td>
+								<td>durchschnittliche Verfügbarkeit</td>
+								<td>durchschnittliche Verfügbarkeit</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</body>
+	
+</html>
